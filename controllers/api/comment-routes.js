@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Post,
-                attributes: ['id', 'body', 'title'],
+                attributes: ['id', 'post_text', 'title'],
                 include: {
                     model: User,
                     attributes: ['username']

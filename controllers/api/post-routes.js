@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id', 
-            'body',
+            // 'post_text',
             'title',
             'created_at'
         ],
@@ -42,7 +42,7 @@ router.get('/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'body',
+            'post_text',
             'title', 
             'created_at'
         ],
@@ -66,25 +66,26 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const { title, body, user_id } = req.body;
+    console.log(req.body);
     Post.create({
-        title,
-        body,
-        user_id
+        title: req.body.title,
+        // post_text: req.body.post_text,
+        user_id: req.body.user_id
     })
     .then(dbPostData => {
         res.json(dbPostData);
     })
     .catch(e => {
+        console.log(e);
         res.status(500).json(e);
     });
 });
 
 router.put('/:id', (req, res) => {
-    const { title, body } = req.body;
+    const { title, post_text } = req.body;
     Post.findOne({
         title,
-        body
+        post_text
     },
     {
         where: {

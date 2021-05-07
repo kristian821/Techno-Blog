@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
     console.log(req.body);
     Post.create({
         title: req.body.title,
-        // post_text: req.body.post_text,
+        post_text: req.body.post_text,
         user_id: req.body.user_id
     })
     .then(dbPostData => {

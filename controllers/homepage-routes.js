@@ -29,13 +29,28 @@ router.get('/', (req, res) => {
     .then(dbPostData => {
         const posts = dbPostData.map( post => post.get({ plain: true }));
         res.render('homepage', {
-            posts
+            posts,
+            loggedIn: req.session.loggedIn
         });
     })
     .catch(e => {
         console.log(e);
         res.status(500).json(e);
     });
+});
+
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+    }
+    res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+    }
+    res.render('signup');
 });
 
 router.get('/post/:id', (req, res) => {
@@ -67,6 +82,7 @@ router.get('/post/:id', (req, res) => {
         }
 
         const post = dbPostData.get({ plain: true });
+        console.log(post);
         res.render('single-post', {
             post
         });

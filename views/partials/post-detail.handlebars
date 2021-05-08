@@ -1,9 +1,11 @@
 <div class="post-detail">
     <div class="title">
-        <h2>
-            {{title}}
-        </h2>
-        <span class="author">Posted by {{user.username}} on {{created_at}}</span>
+        <a href="/post/{{id}}">
+            <h2>
+                {{title}}
+            </h2>
+        </a>
+        <span class="author">Posted by {{user.username}} on {{format_date created_at}}</span>
     </div>
     <div class="body">
         {{post_text}}

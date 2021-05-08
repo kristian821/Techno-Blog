@@ -1,0 +1,14 @@
+<div class="coments">
+    <ul>
+        {{#each comments as |comment|}}
+        <li class="list-item">
+            <div>
+                <h3>{{comment.user.username}}</h3>
+            </div>
+            <div>
+                {{comment.comment_text}}
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>

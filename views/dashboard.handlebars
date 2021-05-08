@@ -1,0 +1,22 @@
+<section>
+    {{#if loggedIn}}
+    <h2>{{username}}</h2>
+        {{#if newPost}}
+        {{> new-post}}
+        {{/if}}
+
+        {{#each posts}}
+        {{>post-detail }}
+        {{/each}}
+    {{else}}
+    <a href="/login" class="btn-primary">Login</a>
+    {{/if}}
+    
+    <button id="add-post-btn">Add a post</button>
+    
+    <script src="/javascript/addPost.js"></script>
+</section>
+
+
+
+

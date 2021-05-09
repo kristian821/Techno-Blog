@@ -1,7 +1,17 @@
-<ol>
+<ul class="list-group list-group-flush">
     {{#each posts as |post|}}
-    <li>
+    <div class="post-detail card mb-3" style="max-width: 25vw">
+        <div class="row">
+            <div class="title col-3">
+                <a href="/post/{{post.id}}">
+                    <h4 class="card-title">
+                        {{post.title}}
+                    </h4>
+                </a>
+            </div>
      {{> post-detail post}}
-    </li>
+            
+        </div>
+    </div>
     {{/each}}
-</ol>
+</ul>

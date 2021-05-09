@@ -2,18 +2,18 @@
 
 <form class="edit-post-form">
     <div>
-        <input type="text" value="{{title}}">
+        <input type="text" value="{{title}}" id="title">
     </div>
     <div>
-        <input type="text" value="{{post_text}}">
+        <input type="text" value="{{post_text}}" id="body">
     </div>
-    <button type="submit">Save Post</button>
-    <button id="delete-btn">Delete Post</button>
+    <button type="submit" class="btn btn-success">Save Post</button>
+    <button id="delete-btn" class="btn btn-danger">Delete Post</button>
 </form>
 
 <form class="comment-form">
     <div>
-        <input type="text" id="">
+        <input type="text" id="comment-text">
     </div>
 </form>
 

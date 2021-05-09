@@ -1,13 +1,5 @@
-<div class="post-detail">
-    <div class="title">
-        <a href="/post/{{id}}">
-            <h2>
-                {{title}}
-            </h2>
-        </a>
-        <span class="author">Posted by {{user.username}} on {{format_date created_at}}</span>
-    </div>
-    <div class="body">
-        {{post_text}}
-    </div>
-</div>
+ 
+        <span class="author card-subtitle text-muted">Posted by {{user.username}} on {{format_date created_at}}</span>
+        <div class="body card-text">
+            {{post_text}}
+        </div>

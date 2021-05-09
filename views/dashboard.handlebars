@@ -1,12 +1,19 @@
 <section>
     {{#if loggedIn}}
-    <h2>{{username}}</h2>
-        {{#if newPost}}
-        {{> new-post}}
-        {{/if}}
 
-        {{#each posts}}
-        {{>post-detail }}
+        {{#each posts as |post|}}
+        <div class="post-detail card mb-3" style="max-width: 25vw">
+        <div class="row">
+            <div class="title col-3">
+                <a href="/post/{{post.id}}">
+                    <h4 class="card-title">
+                        {{post.title}}
+                    </h4>
+                </a>
+            </div>
+        {{> post-detail post}}
+        </div>
+        </div>
         {{/each}}
     {{else}}
     <a href="/login" class="btn-primary">Login</a>

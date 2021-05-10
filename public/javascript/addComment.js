@@ -2,8 +2,6 @@ const commentFormHandler = async (event) => {
     event.preventDefault();
 
     const comment_text = document.querySelector('textarea[name="comment-text"]').value.trim();
-    
-    console.log(comment_text);
 
     const post_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1

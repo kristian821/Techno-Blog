@@ -5,33 +5,25 @@ const signupFormHandler = async (event) => {
     const email = document.querySelector('#signup-email').value.trim();
     const password = document.querySelector('#signup-password').value.trim();
 
-    console.log(username, email, password);
-
     if (username && email && password) {
-        const response = await fetch('/api/users/', {
-            method: 'POST',
+        const response = await fetch('/api/users', {
+            method: 'post',
             body: JSON.stringify({
                 username,
                 email,
                 password
             }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            headers: { 'Content-Type': 'application/json' }
         });
+
+        console.log(response);
         if (response.ok) {
-          return console.log('it worked');
+          document.location.reload();
         } else {
             alert(response.statusText);
         }
     }
 };
 
-const loginButtonHandler = event => {
-    event.preventDefault();
-
-    document.location.replace('/login');
-};
-
-document.querySelector('#login-btn').addEventListener('click', loginButtonHandler);
 document.querySelector('#signup-btn').addEventListener('submit', signupFormHandler);
+

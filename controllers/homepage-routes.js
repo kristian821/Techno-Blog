@@ -47,10 +47,10 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
+   if (!req.session.loggedIn) {
+        res.render('signup');
     }
-    res.render('signup');
+    res.redirect('/');
 });
 
 router.get('/post/:id', (req, res) => {

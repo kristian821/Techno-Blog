@@ -2,10 +2,10 @@
 
 <form class="edit-post-form">
     <div>
-        <input type="text" value="{{title}}" id="title">
+        <input type="text" value="{{post.title}}" id="title">
     </div>
     <div>
-        <input type="text" value="{{post_text}}" id="body">
+        <input type="text" value="{{post.post_text}}" id="body">
     </div>
     <button type="submit" class="btn btn-success">Save Post</button>
     <button id="delete-btn" class="btn btn-danger">Delete Post</button>
@@ -13,9 +13,13 @@
 
 <form class="comment-form">
     <div>
-        <input type="text" id="comment-text">
+        <textarea name="comment-text" ></textarea>
+    </div>
+    <div>
+        <button type="submit">Add</button>
     </div>
 </form>
 
 <script src="/javascript/editPost.js"></script>
 <script src="/javascript/deletePost.js"></script>
+<script src="/javascript/addComment.js"></script>

@@ -46,7 +46,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'title', 'post_text', 'user_id', 'created_at'],
         include: [
             {
                 model: Comment,
@@ -63,11 +63,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
         ]
     })
     .then(dbPostData => {
-        const post = dbPost.data.get({ plain: true });
-        res.render('edit-post', {
-            post,
-            loggedIn: true
-        });
+        if (!dbPostData) {
+            return res.status(404).json({ message: 'No post found with this ID'});
+        }
+        const post = dbPostData.get({ plain: true });
+        res.render('edit-post', { post });
     })
     .catch(e => {
         console.log(e);

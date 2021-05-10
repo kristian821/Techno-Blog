@@ -1,5 +1,16 @@
  <div class="post">
-     {{> post-detail post}}
+      <div class="post-detail card mb-3" style="max-width: 25vw">
+        <div class="row">
+            <div class="title">
+                <a href="/dashboard/edit/{{post.id}}">
+                    <h4 class="card-title">
+                        {{post.title}}
+                    </h4>
+                </a>
+            </div>
+        {{> post-detail post}}
+        </div>
+        </div>
  </div>
  <div class="comments">
      {{> comments post}}

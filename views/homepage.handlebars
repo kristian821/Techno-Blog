@@ -1,10 +1,10 @@
 <ul class="list-group list-group-flush">
     {{#each posts as |post|}}
-    <div class="post-detail card mb-3" style="max-width: 25vw">
+    <div class="post-detail card mb-3">
         <div class="row">
-            <div class="title">
-                <a href="/post/{{post.id}}">
-                    <h4 class="card-title">
+            <div class="title col-auto">
+                <a href="/post/{{post.id}}" class="text-decoration-none">
+                    <h4 class="card-title p-3">
                         {{post.title}}
                     </h4>
                 </a>

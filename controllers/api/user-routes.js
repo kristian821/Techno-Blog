@@ -50,7 +50,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     const { username, email, password } = req.body;
 
     User.create({
@@ -77,7 +77,7 @@ router.post('/login', (req, res) => {
         if (!dbUserData) {
             return res.status(400).json({ message: 'No user found with this ID'});
         }
-        
+
         const validatePassword = dbUserData.validatePassword(req.body.password);
         
         if (!validatePassword) {

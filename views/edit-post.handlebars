@@ -1,22 +1,29 @@
-<h2>Edit Post</h2>
+<h2 class="text-center">Edit Post</h2>
 
 <form class="edit-post-form">
-    <div>
-        <input type="text" value="{{post.title}}" id="title">
+    <div class"mb-3">
+        <input type="text" value="{{post.title}}" class="form-control" id="title">
     </div>
-    <div>
-        <input type="text" value="{{post.post_text}}" id="body">
+    <div class="mb-3">
+        <input type="text" value="{{post.post_text}}" class="form-control" id="body">
     </div>
-    <button type="submit" class="btn btn-success">Save Post</button>
-    <button id="delete-btn" class="btn btn-danger">Delete Post</button>
+    <div class="row">
+        <div class="col-6">
+    <button type="submit" class="btn btn-success mb-3">Update Post</button>
+    </div>
+    <div class="col-6">
+    <button id="delete-btn" class="btn btn-danger mb-3">Delete Post</button>
+    </div>
+    </div>
 </form>
 
 <form class="comment-form">
-    <div>
-        <textarea name="comment-text" ></textarea>
+    <div class="form-floating mb-3">
+        <textarea name="comment-text" class="form-control" ></textarea>
+        <label for="comment-text">Add a comment</label>
     </div>
-    <div>
-        <button type="submit">Add</button>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-success">Add</button>
     </div>
 </form>
 

@@ -10,7 +10,7 @@ const routes = require('./controllers');
 require('dotenv').config();
 
 const sess = {
-    secret: process.env.SECRET,
+    secret: 'Secret Sauce',
     cookie: {},
     resave: false,
     saveUninitialized: true,
